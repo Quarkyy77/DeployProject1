@@ -38,7 +38,7 @@ const initialValuesRegister = {
   password: "",
   location: "",
   occupation: "",
-  picture: "",
+  picturePath: "",
 };
 
 const initialValuesLogin = {
@@ -183,7 +183,7 @@ const Form = () => {
                     acceptedFiles=".jpg,.jpeg,.png"
                     multiple={false}
                     onDrop={(acceptedFiles) =>
-                      setFieldValue("picture", acceptedFiles[0])
+                      setFieldValue("picturePath", acceptedFiles[0])
                     }>
                     {({ getRootProps, getInputProps }) => (
                       <Box
