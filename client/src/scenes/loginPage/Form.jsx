@@ -196,7 +196,7 @@ const Form = () => {
                           <p>Add Picture Here</p>
                         ) : (
                           <FlexBetween>
-                            <Typography>{values.picture.name}</Typography>
+                            <Typography>{values.picturePath.name}</Typography>
                             <EditOutlinedIcon />
                           </FlexBetween>
                         )}
