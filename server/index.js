@@ -33,7 +33,6 @@ app.use(
   cors({
     origin: ["https://deploy-project1-frontend.vercel.app"],
     methods: ["POST", "GET"],
-    credentials: true,
   })
 );
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
