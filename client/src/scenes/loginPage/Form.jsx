@@ -67,7 +67,6 @@ const Form = () => {
       "https://deploy-project1-jtoly9ykv-quarkyy77.vercel.app/auth/register",
       {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         body: formData,
       }
     );
