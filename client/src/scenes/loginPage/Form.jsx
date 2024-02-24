@@ -38,7 +38,6 @@ const initialValuesRegister = {
   password: "",
   location: "",
   occupation: "",
-  picturePath: "",
 };
 
 const initialValuesLogin = {
@@ -183,7 +182,7 @@ const Form = () => {
                     acceptedFiles=".jpg,.jpeg,.png"
                     multiple={false}
                     onDrop={(acceptedFiles) =>
-                      setFieldValue("picturePath", acceptedFiles[0])
+                      setFieldValue("picture", acceptedFiles[0])
                     }>
                     {({ getRootProps, getInputProps }) => (
                       <Box
@@ -196,7 +195,7 @@ const Form = () => {
                           <p>Add Picture Here</p>
                         ) : (
                           <FlexBetween>
-                            <Typography>{values.picturePath.name}</Typography>
+                            <Typography>{values.picture.name}</Typography>
                             <EditOutlinedIcon />
                           </FlexBetween>
                         )}
