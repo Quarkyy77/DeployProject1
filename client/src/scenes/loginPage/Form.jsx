@@ -57,9 +57,8 @@ const Form = () => {
     // this allows us to send form info with image
     const formData = new FormData();
     for (let value in values) {
-      if (value !== picture) formData.append(value, values[value]);
+      formData.append(value, values[value]);
     }
-    formData.append("picturePath", values.picture.name);
 
     const savedUserResponse = await fetch(
       "https://deploy-project1-navy.vercel.app/auth/register",
@@ -181,7 +180,7 @@ const Form = () => {
                     acceptedFiles=".jpg,.jpeg,.png"
                     multiple={false}
                     onDrop={(acceptedFiles) =>
-                      setFieldValue("picture", acceptedFiles[0])
+                      setFieldValue("picturePath", values.picture.name)
                     }>
                     {({ getRootProps, getInputProps }) => (
                       <Box
