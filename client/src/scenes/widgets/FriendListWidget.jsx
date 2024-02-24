@@ -13,7 +13,7 @@ const FriendListWidget = ({ userId }) => {
 
   const getFriends = async () => {
     const response = await fetch(
-      `http://localhost:3001/users/${userId}/friends`,
+      `https://deploy-project1-jtoly9ykv-quarkyy77.vercel.app/users/${userId}/friends`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
@@ -33,8 +33,7 @@ const FriendListWidget = ({ userId }) => {
         color={palette.neutral.dark}
         variant="h5"
         fontWeight="500"
-        sx={{ mb: "1.5rem" }}
-      >
+        sx={{ mb: "1.5rem" }}>
         Friend List
       </Typography>
       <Box display="flex" flexDirection="column" gap="1.5rem">

@@ -64,7 +64,7 @@ const Form = () => {
     formData.append("picturePath", values.picture.name);
 
     const savedUserResponse = await fetch(
-      "http://localhost:3001/auth/register",
+      "https://deploy-project1-jtoly9ykv-quarkyy77.vercel.app/auth/register",
       {
         method: "POST",
         body: formData,
@@ -79,11 +79,14 @@ const Form = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch("http://localhost:3001/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(values),
-    });
+    const loggedInResponse = await fetch(
+      "https://deploy-project1-jtoly9ykv-quarkyy77.vercel.app/auth/login",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      }
+    );
     const loggedIn = await loggedInResponse.json();
     onSubmitProps.resetForm();
     if (loggedIn) {
@@ -106,8 +109,7 @@ const Form = () => {
     <Formik
       onSubmit={handleFormSubmit}
       initialValues={isLogin ? initialValuesLogin : initialValuesRegister}
-      validationSchema={isLogin ? loginSchema : registerSchema}
-    >
+      validationSchema={isLogin ? loginSchema : registerSchema}>
       {({
         values,
         errors,
@@ -125,8 +127,7 @@ const Form = () => {
             gridTemplateColumns="repeat(4, minmax(0, 1fr))"
             sx={{
               "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
-            }}
-          >
+            }}>
             {isRegister && (
               <>
                 <TextField
@@ -177,22 +178,19 @@ const Form = () => {
                   gridColumn="span 4"
                   border={`1px solid ${palette.neutral.medium}`}
                   borderRadius="5px"
-                  p="1rem"
-                >
+                  p="1rem">
                   <Dropzone
                     acceptedFiles=".jpg,.jpeg,.png"
                     multiple={false}
                     onDrop={(acceptedFiles) =>
                       setFieldValue("picture", acceptedFiles[0])
-                    }
-                  >
+                    }>
                     {({ getRootProps, getInputProps }) => (
                       <Box
                         {...getRootProps()}
                         border={`2px dashed ${palette.primary.main}`}
                         p="1rem"
-                        sx={{ "&:hover": { cursor: "pointer" } }}
-                      >
+                        sx={{ "&:hover": { cursor: "pointer" } }}>
                         <input {...getInputProps()} />
                         {!values.picture ? (
                           <p>Add Picture Here</p>
@@ -243,8 +241,7 @@ const Form = () => {
                 backgroundColor: palette.primary.main,
                 color: palette.background.alt,
                 "&:hover": { color: palette.primary.main },
-              }}
-            >
+              }}>
               {isLogin ? "LOGIN" : "REGISTER"}
             </Button>
             <Typography
@@ -259,8 +256,7 @@ const Form = () => {
                   cursor: "pointer",
                   color: palette.primary.light,
                 },
-              }}
-            >
+              }}>
               {isLogin
                 ? "Don't have an account? Sign Up here."
                 : "Already have an account? Login here."}

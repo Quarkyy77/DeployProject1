@@ -46,11 +46,14 @@ const MyPostWidget = ({ picturePath }) => {
       formData.append("picturePath", image.name);
     }
 
-    const response = await fetch(`http://localhost:3001/posts`, {
-      method: "POST",
-      headers: { Authorization: `Bearer ${token}` },
-      body: formData,
-    });
+    const response = await fetch(
+      `https://deploy-project1-jtoly9ykv-quarkyy77.vercel.app/posts`,
+      {
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}` },
+        body: formData,
+      }
+    );
     const posts = await response.json();
     dispatch(setPosts({ posts }));
     setImage(null);
@@ -78,13 +81,11 @@ const MyPostWidget = ({ picturePath }) => {
           border={`1px solid ${medium}`}
           borderRadius="5px"
           mt="1rem"
-          p="1rem"
-        >
+          p="1rem">
           <Dropzone
             acceptedFiles=".jpg,.jpeg,.png"
             multiple={false}
-            onDrop={(acceptedFiles) => setImage(acceptedFiles[0])}
-          >
+            onDrop={(acceptedFiles) => setImage(acceptedFiles[0])}>
             {({ getRootProps, getInputProps }) => (
               <FlexBetween>
                 <Box
@@ -92,8 +93,7 @@ const MyPostWidget = ({ picturePath }) => {
                   border={`2px dashed ${palette.primary.main}`}
                   p="1rem"
                   width="100%"
-                  sx={{ "&:hover": { cursor: "pointer" } }}
-                >
+                  sx={{ "&:hover": { cursor: "pointer" } }}>
                   <input {...getInputProps()} />
                   {!image ? (
                     <p>Add Image Here</p>
@@ -107,8 +107,7 @@ const MyPostWidget = ({ picturePath }) => {
                 {image && (
                   <IconButton
                     onClick={() => setImage(null)}
-                    sx={{ width: "15%" }}
-                  >
+                    sx={{ width: "15%" }}>
                     <DeleteOutlined />
                   </IconButton>
                 )}
@@ -125,8 +124,7 @@ const MyPostWidget = ({ picturePath }) => {
           <ImageOutlined sx={{ color: mediumMain }} />
           <Typography
             color={mediumMain}
-            sx={{ "&:hover": { cursor: "pointer", color: medium } }}
-          >
+            sx={{ "&:hover": { cursor: "pointer", color: medium } }}>
             Image
           </Typography>
         </FlexBetween>
@@ -161,8 +159,7 @@ const MyPostWidget = ({ picturePath }) => {
             color: palette.background.alt,
             backgroundColor: palette.primary.main,
             borderRadius: "3rem",
-          }}
-        >
+          }}>
           POST
         </Button>
       </FlexBetween>

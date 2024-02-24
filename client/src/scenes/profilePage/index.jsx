@@ -15,10 +15,13 @@ const ProfilePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
 
   const getUser = async () => {
-    const response = await fetch(`http://localhost:3001/users/${userId}`, {
-      method: "GET",
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const response = await fetch(
+      `https://deploy-project1-jtoly9ykv-quarkyy77.vercel.app/users/${userId}`,
+      {
+        method: "GET",
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
     const data = await response.json();
     setUser(data);
   };
@@ -37,8 +40,7 @@ const ProfilePage = () => {
         padding="2rem 6%"
         display={isNonMobileScreens ? "flex" : "block"}
         gap="2rem"
-        justifyContent="center"
-      >
+        justifyContent="center">
         <Box flexBasis={isNonMobileScreens ? "26%" : undefined}>
           <UserWidget userId={userId} picturePath={user.picturePath} />
           <Box m="2rem 0" />
@@ -46,8 +48,7 @@ const ProfilePage = () => {
         </Box>
         <Box
           flexBasis={isNonMobileScreens ? "42%" : undefined}
-          mt={isNonMobileScreens ? undefined : "2rem"}
-        >
+          mt={isNonMobileScreens ? undefined : "2rem"}>
           <MyPostWidget picturePath={user.picturePath} />
           <Box m="2rem 0" />
           <PostsWidget userId={userId} isProfile />

@@ -20,7 +20,7 @@ const AdvertWidget = () => {
         width="100%"
         height="auto"
         alt="advert"
-        src="http://localhost:3001/assets/info4.jpeg"
+        src="https://deploy-project1-jtoly9ykv-quarkyy77.vercel.app/assets/info4.jpeg"
         style={{ borderRadius: "0.75rem", margin: "0.75rem 0" }}
       />
       <FlexBetween>
@@ -28,8 +28,8 @@ const AdvertWidget = () => {
         <Typography color={medium}>jbitdoon.edu.in</Typography>
       </FlexBetween>
       <Typography color={medium} m="0.5rem 0">
-        Your pathway to stunning and bright future and made sure your future
-        is  shining like light.
+        Your pathway to stunning and bright future and made sure your future is
+        shining like light.
       </Typography>
     </WidgetWrapper>
   );

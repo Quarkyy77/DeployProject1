@@ -23,7 +23,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
   const patchFriend = async () => {
     const response = await fetch(
-      `http://localhost:3001/users/${_id}/${friendId}`,
+      `https://deploy-project1-jtoly9ykv-quarkyy77.vercel.app/users/${_id}/${friendId}`,
       {
         method: "PATCH",
         headers: {
@@ -44,8 +44,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
           onClick={() => {
             navigate(`/profile/${friendId}`);
             navigate(0);
-          }}
-        >
+          }}>
           <Typography
             color={main}
             variant="h5"
@@ -55,8 +54,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
                 color: palette.primary.light,
                 cursor: "pointer",
               },
-            }}
-          >
+            }}>
             {name}
           </Typography>
           <Typography color={medium} fontSize="0.75rem">
@@ -66,8 +64,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
       </FlexBetween>
       <IconButton
         onClick={() => patchFriend()}
-        sx={{ backgroundColor: primaryLight, p: "0.6rem" }}
-      >
+        sx={{ backgroundColor: primaryLight, p: "0.6rem" }}>
         {isFriend ? (
           <PersonRemoveOutlined sx={{ color: primaryDark }} />
         ) : (
