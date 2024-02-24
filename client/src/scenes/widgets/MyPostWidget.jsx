@@ -47,7 +47,7 @@ const MyPostWidget = ({ picturePath }) => {
     }
 
     const response = await fetch(
-      `https://deploy-project1-jtoly9ykv-quarkyy77.vercel.app/posts`,
+      `https://deploy-project1-navy.vercel.app/posts`,
       {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },

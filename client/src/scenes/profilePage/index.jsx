@@ -16,7 +16,7 @@ const ProfilePage = () => {
 
   const getUser = async () => {
     const response = await fetch(
-      `https://deploy-project1-jtoly9ykv-quarkyy77.vercel.app/users/${userId}`,
+      `https://deploy-project1-navy.vercel.app/users/${userId}`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },

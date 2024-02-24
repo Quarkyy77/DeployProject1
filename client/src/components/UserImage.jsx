@@ -8,7 +8,7 @@ const UserImage = ({ image, size = "60px" }) => {
         width={size}
         height={size}
         alt="user"
-        src={`https://deploy-project1-jtoly9ykv-quarkyy77.vercel.app/assets/${image}`}
+        src={`https://deploy-project1-navy.vercel.app//assets/${image}`}
       />
     </Box>
   );

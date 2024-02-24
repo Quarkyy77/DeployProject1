@@ -10,7 +10,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
 
   const getPosts = async () => {
     const response = await fetch(
-      "https://deploy-project1-jtoly9ykv-quarkyy77.vercel.app/posts",
+      "https://deploy-project1-navy.vercel.app/posts",
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
@@ -22,7 +22,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
 
   const getUserPosts = async () => {
     const response = await fetch(
-      `https://deploy-project1-jtoly9ykv-quarkyy77.vercel.app/posts/${userId}/posts`,
+      `https://deploy-project1-navy.vercel.app/posts/${userId}/posts`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },

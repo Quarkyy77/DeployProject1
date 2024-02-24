@@ -13,7 +13,7 @@ const FriendListWidget = ({ userId }) => {
 
   const getFriends = async () => {
     const response = await fetch(
-      `https://deploy-project1-jtoly9ykv-quarkyy77.vercel.app/users/${userId}/friends`,
+      `https://deploy-project1-navy.vercel.app/users/${userId}/friends`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },

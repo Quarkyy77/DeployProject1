@@ -56,12 +56,8 @@ app.post("/posts", verifyToken, upload.single("picture"), createPost);
 /* ROUTES */
 app.get("/", (req, res) => {
   res.json("Welcomne to my project");
-});
-
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-});
-app.use("/auth", authRoutes);
+}); //deploy-project1-navy.vercel.app/
+https: app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 
